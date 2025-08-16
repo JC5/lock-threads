@@ -1,6 +1,6 @@
-name: 'Lock Threads'
+name: 'Lock Threads (JC5)'
 description: 'Lock closed issues, pull requests and discussions after a period of inactivity'
-author: 'Armin Sebastian'
+author: 'Armin Sebastian + James Cole'
 inputs:
   github-token:
     description: 'GitHub access token'
