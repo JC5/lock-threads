@@ -270,10 +270,11 @@ class App {
     } else {
       ({
         data: {items: results}
-      } = await this.client.rest.search.issuesAndPullRequests({
+      } = await this.client.rest.search.code({
         q: query,
         sort: 'updated',
         order: 'desc',
+        advanced: true,
         per_page: 50
       }));
 
