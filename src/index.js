@@ -275,7 +275,7 @@ class App {
         sort: 'updated',
         order: 'desc',
         advanced_search: true,
-        per_page: 50
+        per_page: 51
       }));
 
       // results may include locked threads
