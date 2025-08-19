@@ -1,18 +1,10 @@
 # Lock Threads
 
-Lock Threads is a GitHub Action that locks closed issues,
-pull requests and discussions after a period of inactivity.
+Lock Threads is a GitHub Action that locks closed issues, pull requests and discussions after a period of inactivity.
 
 <img width="800" src="https://raw.githubusercontent.com/dessant/lock-threads/main/assets/screenshot.png">
 
-## Supporting the Project
-
-The continued development of Lock Threads is made possible
-thanks to the support of awesome backers. If you'd like to join them,
-please consider contributing with
-[Patreon](https://armin.dev/go/patreon?pr=lock-threads&src=repo),
-[PayPal](https://armin.dev/go/paypal?pr=lock-threads&src=repo) or
-[Bitcoin](https://armin.dev/go/bitcoin?pr=lock-threads&src=repo).
+This project is a fork of the original [lock threads](https://github.com/dessant/lock-threads) action. It is no longer maintained, so I am maintaining this fork.
 
 ## Usage
 
@@ -253,7 +245,7 @@ jobs:
   action:
     runs-on: ubuntu-latest
     steps:
-      - uses: dessant/lock-threads@v5
+      - uses: JC5/lock-threads@v6
 ```
 
 Edit the workflow after the initial backlog of issues, pull requests
@@ -293,7 +285,7 @@ jobs:
   action:
     runs-on: ubuntu-latest
     steps:
-      - uses: dessant/lock-threads@v5
+      - uses: JC5/lock-threads@v6
         with:
           github-token: ${{ github.token }}
           issue-inactive-days: '365'
@@ -349,7 +341,7 @@ or those with the `help wanted` or `upstream` labels applied.
 <!-- prettier-ignore -->
 ```yaml
     steps:
-      - uses: dessant/lock-threads@v5
+      - uses: JC5/lock-threads@v6
         with:
           exclude-issue-created-before: '2018-01-01T00:00:00Z'
           exclude-any-issue-labels: 'help wanted, upstream'
@@ -362,7 +354,7 @@ with the `wip` label applied.
 <!-- prettier-ignore -->
 ```yaml
     steps:
-      - uses: dessant/lock-threads@v5
+      - uses: JC5/lock-threads@v6
         with:
           exclude-any-pr-labels: 'wip'
           process-only: 'prs'
@@ -374,7 +366,7 @@ or those created in 2018 and 2019.
 <!-- prettier-ignore -->
 ```yaml
     steps:
-      - uses: dessant/lock-threads@v5
+      - uses: JC5/lock-threads@v6
         with:
           exclude-issue-created-between: '2018-01-01T00:00:00Z/2019-12-31T23:59:59.999Z'
           exclude-issue-closed-before: '2018-01-01T00:00:00Z'
@@ -388,7 +380,7 @@ labels applied.
 <!-- prettier-ignore -->
 ```yaml
     steps:
-      - uses: dessant/lock-threads@v5
+      - uses: JC5/lock-threads@v6
         with:
           include-any-issue-labels: 'incomplete, invalid'
           include-all-pr-labels: 'qa: done, published'
@@ -401,7 +393,7 @@ in the past 180 days, and have the `qa: verified` label applied.
 <!-- prettier-ignore -->
 ```yaml
     steps:
-      - uses: dessant/lock-threads@v5
+      - uses: JC5/lock-threads@v6
         with:
           discussion-inactive-days: '180'
           include-any-discussion-labels: 'qa: verified'
@@ -416,7 +408,7 @@ and apply the `outdated` label to issues.
 <!-- prettier-ignore -->
 ```yaml
     steps:
-      - uses: dessant/lock-threads@v5
+      - uses: JC5/lock-threads@v6
         with:
           add-issue-labels: 'outdated'
           issue-comment: >
@@ -437,7 +429,7 @@ before locking issues.
 <!-- prettier-ignore -->
 ```yaml
     steps:
-      - uses: dessant/lock-threads@v5
+      - uses: JC5/lock-threads@v6
         with:
           add-issue-labels: 'qa: done, archived'
           remove-issue-labels: 'qa: primary, needs: user feedback'
@@ -459,7 +451,7 @@ using the `github-token` input parameter.
 <!-- prettier-ignore -->
 ```yaml
     steps:
-      - uses: dessant/lock-threads@v5
+      - uses: JC5/lock-threads@v6
         with:
           github-token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
 ```
