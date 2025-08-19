@@ -274,7 +274,7 @@ class App {
         q: query,
         sort: 'updated',
         order: 'desc',
-        advanced: true,
+        advanced_search: true,
         per_page: 50
       }));
 
